@@ -144,7 +144,11 @@ pub fn measure() -> Value {
     put("unused apps default", json!((clean::UNUSED_DAYS[s.unused_idx].0 as f64 / 30.4).round()), "default settings, days converted to months");
 
     // Browsers
-    put("browsers", json!(clean::browser_defs().iter().map(|b| b.name).collect::<Vec<_>>().join(", ")), "browsers this build looks for on this system");
+    // ponytail: the sheet lists the macOS browsers (Safari is macOS-only), so other systems skip this row;
+    // give the sheet per-OS rows if Windows/Linux browser lists ever need checking.
+    if cfg!(target_os = "macos") {
+        put("browsers", json!(clean::browser_defs().iter().map(|b| b.name).collect::<Vec<_>>().join(", ")), "browsers this build looks for on this system");
+    }
     let one = || vec![Item { size: 1, ..Default::default() }];
     let mut cats = clean::browser_cats(one(), one(), one());
     cats.extend(clean::browser_private_cats(one(), one()));
