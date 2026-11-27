@@ -1,6 +1,6 @@
 # Contributing to Claybroom
 
-Thanks for helping. Bug reports, testing on Windows and Linux, and pull requests are all welcome.
+Thanks for helping. Bug reports, testing on Windows and Linux, and pull requests are all welcome. Everyone taking part is expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Reporting a bug or asking for a feature
 
