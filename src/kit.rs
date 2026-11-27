@@ -520,12 +520,13 @@ pub fn date_only(t: std::time::SystemTime) -> String {
 #[cfg(test)]
 mod tests {
     #[test]
-    fn app_icon_has_a_transparent_corner_and_a_white_middle() {
+    fn app_icon_has_a_transparent_corner_and_a_cream_broom() {
         let px = super::app_icon(64);
         assert_eq!(px.len(), 64 * 64 * 4);
         assert_eq!(px[3], 0, "corner is transparent");
-        let mid = ((40 * 64 + 26) * 4) as usize;
-        assert_eq!(&px[mid..mid + 4], &[255, 255, 255, 255], "inside the white disc");
+        let at = |x: usize, y: usize| &px[(y * 64 + x) * 4..(y * 64 + x) * 4 + 4];
+        assert!(at(32, 12)[0] > at(32, 12)[2] + 40 && at(32, 12)[3] == 255, "clay tile near the top");
+        assert!(at(38, 25)[..3].iter().all(|&c| c > 220), "cream broom handle");
     }
 
     #[test]
@@ -654,37 +655,14 @@ pub fn badge(ui: &mut egui::Ui, name: &str, size: f32) {
     ui.painter().text(r.center(), egui::Align2::CENTER_CENTER, letter, egui::FontId::new(size * 0.47, bold_family()), Color32::WHITE);
 }
 
-/// Claybroom's own app icon: a blue rounded square with a white swept disc,
-/// as straight RGBA pixels of `size`×`size`. Used for the window, the macOS .icns and Windows.
+/// Claybroom's app icon: a cream broom on a clay tile (source: `assets/icon.svg`, rendered to
+/// `assets/icon-1024.png`), as straight RGBA pixels of `size`×`size`.
+/// Used for the window, the macOS .icns, Windows and the tray.
 pub fn app_icon(size: u32) -> Vec<u8> {
-    let n = size as f32;
-    let mut out = Vec::with_capacity((size * size * 4) as usize);
-    // Coverage of a shape from its signed distance (negative inside), smoothed over one pixel.
-    let cover = |d: f32| (0.5 - d).clamp(0.0, 1.0);
-    for y in 0..size {
-        for x in 0..size {
-            let (px, py) = ((x as f32 + 0.5) / n, (y as f32 + 0.5) / n);
-            // Rounded square, inset a little like macOS icons.
-            let (inset, r) = (0.09, 0.2);
-            let qx = (px - 0.5).abs() - (0.5 - inset - r);
-            let qy = (py - 0.5).abs() - (0.5 - inset - r);
-            let outside = (qx.max(0.0).powi(2) + qy.max(0.0).powi(2)).sqrt() + qx.max(qy).min(0.0) - r;
-            let a_bg = cover(outside * n);
-            // Blue gradient, top-left lighter.
-            let t = (px + py) / 2.0;
-            let bg = [0x55 as f32 * (1.0 - t) + 0x2c as f32 * t, 0x78 as f32 * (1.0 - t) + 0x45 as f32 * t, 0xd0 as f32 * (1.0 - t) + 0x8a as f32 * t];
-            // White disc with a bite out of its upper right: a "sweep".
-            let disc = ((px - 0.5).powi(2) + (py - 0.53).powi(2)).sqrt() - 0.25;
-            let bite = ((px - 0.62).powi(2) + (py - 0.41).powi(2)).sqrt() - 0.14;
-            let a_white = cover(disc * n) * (1.0 - cover(bite * n)) + cover((((px - 0.72).powi(2) + (py - 0.28).powi(2)).sqrt() - 0.035) * n);
-            let a_white = a_white.min(1.0) * a_bg;
-            for c in 0..3 {
-                out.push((bg[c] * (1.0 - a_white) + 255.0 * a_white).round() as u8);
-            }
-            out.push((a_bg * 255.0).round() as u8);
-        }
-    }
-    out
+    let master = image::load_from_memory_with_format(include_bytes!("../assets/icon-1024.png"), image::ImageFormat::Png)
+        .expect("bundled icon")
+        .into_rgba8();
+    image::imageops::resize(&master, size, size, image::imageops::FilterType::Lanczos3).into_raw()
 }
 
 /// A settings checkbox: the filled accent box and its label, both clickable.

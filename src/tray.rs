@@ -18,13 +18,13 @@ pub struct Tray {
     pub rx: Receiver<TrayMsg>,
 }
 
-/// The menu-bar picture: the app icon's swept disc as a black silhouette (macOS tints it to fit
+/// The menu-bar picture: the app icon's cream broom as a black silhouette (macOS tints it to fit
 /// the menu bar), or the coloured app icon on Windows and Linux.
 fn icon_image() -> tray_icon::Icon {
     let size = 44;
     let mut px = crate::kit::app_icon(size);
     if cfg!(target_os = "macos") {
-        // Keep only the white disc, as opaque black on transparent.
+        // Keep only the cream broom, as opaque black on transparent.
         for p in px.chunks_mut(4) {
             let white = p[0].min(p[1]).min(p[2]) as u32;
             let a = (white.saturating_sub(120) * 255 / 135).min(255) as u8;
