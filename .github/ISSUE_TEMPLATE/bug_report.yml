@@ -1,0 +1,84 @@
+name: Bug report
+description: Something in Claybroom doesn't work as it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Before attaching screenshots or logs, please remove file names, folder paths with your username and any browser data.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What went wrong, and what did you expect instead?
+      placeholder: After a clutter scan, the Trash shows 0 bytes although it holds 2 GB of files.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open Clean clutter
+        2. Click SCAN CLUTTER
+        3. …
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS (Apple silicon)
+        - macOS (Intel)
+        - Windows
+        - Linux
+    validations:
+      required: true
+  - type: input
+    id: os-version
+    attributes:
+      label: Operating system version
+      placeholder: macOS 15.2, Windows 11 24H2, Ubuntu 24.04 (GNOME)…
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Claybroom version
+      description: Shown in Settings › General.
+      placeholder: "0.1.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How did you install it?
+      options:
+        - Release download (.dmg, .exe or .tar.gz)
+        - Built from source
+    validations:
+      required: true
+  - type: dropdown
+    id: disk-access
+    attributes:
+      label: macOS only — is Full Disk Access turned on for Claybroom?
+      options:
+        - Not on macOS
+        - "Yes"
+        - "No"
+        - Not sure
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or logs
+      description: Optional. Drag files here; please remove anything personal first.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched the existing issues and this hasn't been reported yet.
+          required: true
+        - label: I removed personal file names, paths and browser data from what I attached.
+          required: true

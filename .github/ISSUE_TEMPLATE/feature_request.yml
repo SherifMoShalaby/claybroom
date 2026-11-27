@@ -1,0 +1,40 @@
+name: Feature request
+description: Suggest something Claybroom could do, or do better.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to be able to do?
+      description: Describe the problem or the moment it would help, not only the solution.
+      placeholder: I'd like to clean my Docker images, which take 40 GB, without opening a terminal.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How could Claybroom help?
+      description: Your idea for how it could work. Rough is fine.
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: Which systems is this for?
+      multiple: true
+      options:
+        - macOS
+        - Windows
+        - Linux
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Anything you use today instead?
+      description: Optional. Another app, a script or a manual step.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched the existing issues and this hasn't been suggested yet.
+          required: true

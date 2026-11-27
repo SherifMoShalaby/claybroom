@@ -190,7 +190,7 @@ No. The only network request is the optional update check (Settings › General,
 
 ## Contributing
 
-Bug reports and pull requests are welcome. Please [open an issue](https://github.com/SherifMoShalaby/claybroom/issues) first for larger changes. Windows and Linux testers are especially helpful right now.
+Bug reports and pull requests are welcome; see [**CONTRIBUTING.md**](CONTRIBUTING.md) for how to build, the rules every change keeps, and how to send a pull request. To report a bug or suggest a feature, [open an issue](https://github.com/SherifMoShalaby/claybroom/issues/new/choose). Windows and Linux testers are especially helpful right now.
 
 ## Licence
 

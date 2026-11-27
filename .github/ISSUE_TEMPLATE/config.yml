@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How to contribute
+    url: https://github.com/SherifMoShalaby/claybroom/blob/master/CONTRIBUTING.md
+    about: Building Claybroom, the rules every change keeps, and how to send a pull request.
