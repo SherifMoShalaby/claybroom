@@ -17,6 +17,8 @@ cargo test -- --ignored --nocapture          # read-only scans of the real compu
 ./target/release/claybroom --page clutter    # open a screen directly (quick|clutter|browser|duplicates|photos|apps|startup|monitor|stats|settings|tray)
 ./target/release/claybroom --page clutter --scan --screenshot out.png   # screenshot after the scan (--during: while scanning)
 ./target/release/claybroom --mechanics out.json   # measure what the build does, no window
+./target/release/claybroom --mcp [--privacy minimal|names|full]   # MCP server on stdio for AI tools (read-only)
+cargo test --test mcp_stdio                  # drives --mcp end to end over stdio
 sh packaging/macos-dmg.sh                    # universal .app + dist/Claybroom-v<version>.dmg
 ```
 
@@ -38,6 +40,7 @@ is pushed. Linux builds need GTK 3 / appindicator dev packages (list in the work
   settings) are UI. `kit.rs` = theme, fonts, icons, widgets; `illus.rs` = code-drawn animated illustrations.
 - `super_clean.rs` runs every scanner at once and splits results into "Safe to clean now" vs "Your call"
   (never pre-ticked); its "See all" reuses the existing screens with the same results.
+- `mcp.rs` (Cargo feature `mcp`, on by default): `--mcp` serves read-only scan tools with rmcp; tokio only starts in that mode. Plan for safe cleaning tools: `docs/mcp-design.md`. Nothing in an MCP scan path may write to stdout (it's the protocol stream).
 - `tray.rs` + `panel.rs`: menu-bar/tray icon; the main window turns into the panel (`--page tray`) and keeps
   running when closed. `tour.rs`: first run (macOS Full Disk Access guide). `shell.rs`: Finder Quick Action /
   Explorer menu / GNOME script and notifications.

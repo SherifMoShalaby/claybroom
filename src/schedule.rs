@@ -62,6 +62,11 @@ pub fn write_settings(s: &Settings) {
     let _ = std::fs::write(dir().join("settings.json"), serde_json::to_vec_pretty(s).unwrap_or_default());
 }
 
+/// The settings the app last saved (defaults if it never ran), for headless modes.
+pub(crate) fn read_settings() -> Settings {
+    read_json("settings.json")
+}
+
 fn read_json<T: serde::de::DeserializeOwned + Default>(name: &str) -> T {
     std::fs::read(dir().join(name)).ok().and_then(|b| serde_json::from_slice(&b).ok()).unwrap_or_default()
 }

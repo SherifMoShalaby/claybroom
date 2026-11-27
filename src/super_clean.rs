@@ -120,7 +120,7 @@ pub fn scan(s: &Settings, dup_folders: &[PathBuf], ctx: &egui::Context, ps: &[Pr
     })
 }
 
-fn is_unused(a: &App, s: &Settings) -> bool {
+pub(crate) fn is_unused(a: &App, s: &Settings) -> bool {
     let days = clean::UNUSED_DAYS[s.unused_idx.min(3)].0;
     a.can_uninstall() && a.last_used.is_some_and(|t| SystemTime::now().duration_since(t).is_ok_and(|d| d.as_secs() > days * 86400))
 }

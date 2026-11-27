@@ -10,6 +10,8 @@ mod clean;
 mod kit;
 mod illus;
 mod mechanics;
+#[cfg(feature = "mcp")]
+mod mcp;
 mod panel;
 mod tray;
 mod update;
@@ -69,6 +71,13 @@ fn main() -> eframe::Result {
     if let Some(out) = args.iter().position(|a| a == "--mechanics").and_then(|i| args.get(i + 1)) {
         let json = serde_json::to_string_pretty(&mechanics::measure()).unwrap();
         std::fs::write(out, json + "\n").expect("write the measurement");
+        return Ok(());
+    }
+    // `--mcp [--privacy minimal|names|full]`: serve MCP on stdin/stdout for AI tools, no window.
+    #[cfg(feature = "mcp")]
+    if args.iter().any(|a| a == "--mcp") {
+        let privacy = args.iter().position(|a| a == "--privacy").and_then(|i| args.get(i + 1));
+        mcp::serve(mcp::Privacy::parse(privacy.map(String::as_str)));
         return Ok(());
     }
     // `--scheduled-clean`: what the hourly background job runs (Settings › Browser Cleaning, Trash).

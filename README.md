@@ -33,7 +33,7 @@ No subscription, no account, no tracking.
 
 - **Every feature is free.** Scheduled cleaning, a cookie allowlist, photo analysis and the uninstaller aren't locked behind a paywall.
 - **It asks before it removes anything.** Only junk that apps rebuild is ticked for you; personal files are suggestions, and they go to the Trash.
-- **It stays on your computer.** No telemetry, no ads, no account. The only network request is an update check, and it's off by default.
+- **It stays on your computer.** No telemetry, no ads, no account. The only network request is an update check, and it's off by default. (If you connect an AI tool, what it reads goes to that tool.)
 - **One native app on three systems.** Written in Rust with [egui](https://github.com/emilk/egui), with light and dark looks that follow your system.
 
 ## Features
@@ -133,6 +133,21 @@ Get the latest version from the **[Releases page](https://github.com/SherifMoSha
 
 > [!TIP]
 > On macOS, allow Claybroom in **System Settings › Privacy & Security › Full Disk Access** so it can see the Trash, Mail downloads and every browser. The app walks you through it on first launch.
+
+## Use with AI tools (MCP)
+
+Claybroom can answer questions from AI tools like Claude Code, Claude Desktop, Codex and Cursor through the [Model Context Protocol](https://modelcontextprotocol.io): "what's taking space?", "which duplicates can go?". It's **read-only for now**: the AI can scan and list, and you clean in the Claybroom window.
+
+```sh
+# Claude Code (macOS)
+claude mcp add --transport stdio --scope user claybroom -- /Applications/Claybroom.app/Contents/MacOS/claybroom --mcp
+```
+
+For Claude Desktop, Codex or Cursor, point the tool at the same command: `claybroom --mcp`.
+
+- **Privacy:** by default the AI sees file names and `~/`-relative locations. Add `--privacy minimal` for sizes and counts only, or `--privacy full` for absolute paths. Whatever it sees goes to the AI tool's model.
+- **macOS:** the scan runs with the AI tool's permissions, so without Full Disk Access for that tool (Terminal, Claude…), the Trash, Mail downloads and some browser data stay hidden. Claybroom says so in its results.
+- The design, including the planned safe-cleaning tools, is in [`docs/mcp-design.md`](docs/mcp-design.md).
 
 ## Safety and privacy
 
