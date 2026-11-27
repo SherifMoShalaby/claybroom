@@ -8,7 +8,7 @@ Use the [issue forms](https://github.com/SherifMoShalaby/claybroom/issues/new/ch
 
 Before you attach a screenshot or a log, remove anything personal: file names, folder paths with your username, and browser data. Claybroom's scan results can show all of these.
 
-For a **security problem** (for example, a way to make Claybroom remove something it should never touch), please don't post the details publicly. Open an issue that only says you have a security report, and we'll arrange a private way to share it.
+For a **security problem** (for example, a way to make Claybroom remove something it should never touch), please don't open a public issue. Send it through [a private security report](https://github.com/SherifMoShalaby/claybroom/security/advisories/new) instead; only the maintainers can see it.
 
 ## Building
 
