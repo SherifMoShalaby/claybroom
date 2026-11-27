@@ -187,7 +187,7 @@ fn stat_key(title: &str, browser: bool) -> &'static str {
         _ if browser && t.contains("cookies") => "Cookies",
         _ if browser && t.contains("cache") => "Browser caches",
         _ if browser => "Browsing history",
-        _ if t == "application cache" => "App caches",
+        _ if t == "app caches" => "App caches",
         _ if t == "log files" => "Log files",
         _ if t == "trash" => "Trash",
         _ if t == "downloads" => "Downloads",
