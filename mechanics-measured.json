@@ -1,0 +1,279 @@
+{
+  "measured_on": "macos",
+  "not_measurable": [
+    "Windows and Linux cleaning folders"
+  ],
+  "values": [
+    {
+      "how": "the options Settings offers",
+      "name": "large files minimum size options",
+      "value": "250 MB, 500 MB, 1 GB, 2 GB, 5 GB, 10 GB"
+    },
+    {
+      "how": "large-file search run on files one byte below and at the default limit",
+      "name": "large files minimum size default",
+      "value": 1000000000
+    },
+    {
+      "how": "default settings",
+      "name": "scan downloads default",
+      "value": true
+    },
+    {
+      "how": "default settings",
+      "name": "scan system cache and logs default",
+      "value": true
+    },
+    {
+      "how": "default settings",
+      "name": "scan external drives default",
+      "value": true
+    },
+    {
+      "how": "the user-cache rule's folder",
+      "name": "user cache folder (macOS)",
+      "value": "~/Library/Caches"
+    },
+    {
+      "how": "cache rule cleaned a folder holding them; these survived",
+      "name": "user cache excludes (macOS)",
+      "value": "com.apple.Safari/Extensions, fontconfig, Java"
+    },
+    {
+      "how": "log rule cleaned a folder holding them; these survived",
+      "name": "user log excludes (macOS)",
+      "value": ""
+    },
+    {
+      "how": "asked which system folders refuse removal",
+      "name": "protected folder",
+      "value": "/System/"
+    },
+    {
+      "how": "drive-junk test run on sample names",
+      "name": "external drive meta files",
+      "value": ".DS_Store, .VolumeIcon.icns, ._*, .fseventsd, .Spotlight-V100, .TemporaryItems"
+    },
+    {
+      "how": "Trash rule cleaned a folder holding an empty folder",
+      "name": "trash deletes empty folders",
+      "value": true
+    },
+    {
+      "how": "the options Settings offers",
+      "name": "duplicates minimum size options",
+      "value": "16 KB, 500 KB, 1 MB, 10 MB, 50 MB"
+    },
+    {
+      "how": "duplicate finder run on identical pairs one byte below and at the default limit",
+      "name": "duplicates minimum size default",
+      "value": 500000
+    },
+    {
+      "how": "same-content pair with different names vs. same-size different-content file",
+      "name": "duplicates match rule",
+      "value": "100% identical content"
+    },
+    {
+      "how": "hidden identical files were left out of the results",
+      "name": "ignore hidden files default",
+      "value": true
+    },
+    {
+      "how": "which copy stayed unticked after a scan",
+      "name": "duplicates preselect default",
+      "value": "keep newest"
+    },
+    {
+      "how": "default settings",
+      "name": "move duplicates to trash default",
+      "value": true
+    },
+    {
+      "how": "the options Settings offers",
+      "name": "large apps options",
+      "value": "500 MB, 1 GB, 2 GB, 5 GB, 10 GB, 15 GB"
+    },
+    {
+      "how": "default settings",
+      "name": "large apps default",
+      "value": 1000000000
+    },
+    {
+      "how": "the options Settings offers",
+      "name": "unused apps options",
+      "value": "1, 3, 6 months, 1 year"
+    },
+    {
+      "how": "default settings, days converted to months",
+      "name": "unused apps default",
+      "value": 6.0
+    },
+    {
+      "how": "browsers this build looks for on this system",
+      "name": "browsers",
+      "value": "Safari, Chrome, Firefox, Opera, Edge, Brave, Vivaldi"
+    },
+    {
+      "how": "categories a browser scan produces",
+      "name": "browser categories",
+      "value": "Caches, Browsing history, Cookies, Saved form data, Autofill passwords"
+    },
+    {
+      "how": "what Suggested ticks",
+      "name": "browser recommended selection",
+      "value": "caches and history"
+    },
+    {
+      "how": "startup item types the manager shows",
+      "name": "startup item types",
+      "value": "Application, Launch agent, Launch daemon"
+    },
+    {
+      "how": "Statistics conversion, MB",
+      "name": "statistics: size of one picture",
+      "value": 3.0
+    },
+    {
+      "how": "Statistics conversion, MB",
+      "name": "statistics: one minute of video",
+      "value": 16.0
+    },
+    {
+      "how": "Statistics conversion, MB",
+      "name": "statistics: one song",
+      "value": 4.0
+    },
+    {
+      "how": "window opened at this size",
+      "name": "window size",
+      "value": "1006 x 660"
+    },
+    {
+      "how": "default settings",
+      "name": "move deleted photos to trash default",
+      "value": true
+    },
+    {
+      "how": "photo analyzer run on a sharp, a flat, a dark and a bright sample image",
+      "name": "photo bad-photo rules",
+      "value": "fine, Blurry, Too dark, Too bright"
+    },
+    {
+      "how": "photo analyzer constant",
+      "name": "similar photos: max hash difference",
+      "value": 5
+    },
+    {
+      "how": "photo analyzer constant",
+      "name": "similar photos: max time apart",
+      "value": 600
+    },
+    {
+      "how": "default settings",
+      "name": "auto-empty trash default",
+      "value": false
+    },
+    {
+      "how": "default settings",
+      "name": "auto-empty trash after",
+      "value": 7
+    },
+    {
+      "how": "default settings",
+      "name": "clutter alert default",
+      "value": 2000000000
+    },
+    {
+      "how": "default settings",
+      "name": "disk space alert default",
+      "value": 10000000000
+    },
+    {
+      "how": "tabs the Settings window shows",
+      "name": "settings tabs",
+      "value": "General, Scanning, Browser Cleaning, Trash, Alerts, About, Privacy"
+    },
+    {
+      "how": "items on the left rail, in order",
+      "name": "sidebar tabs",
+      "value": "Overview, Quick clean, Super clean, Clean clutter, Clean browser, Find duplicates, Analyze photos, Uninstall apps, Manage startups, System monitor, Statistics, Settings"
+    },
+    {
+      "how": "looks Settings › General offers",
+      "name": "appearance themes",
+      "value": "Match system, Light, Dark"
+    },
+    {
+      "how": "default settings",
+      "name": "appearance default",
+      "value": "Match system"
+    },
+    {
+      "how": "default settings",
+      "name": "large files on the whole computer default",
+      "value": false
+    },
+    {
+      "how": "files Analyze photos reads",
+      "name": "photo file types",
+      "value": "jpg, jpeg, png; heic, heif through a converter"
+    },
+    {
+      "how": "default settings",
+      "name": "update check default",
+      "value": false
+    },
+    {
+      "how": "default settings",
+      "name": "folder right-click item default",
+      "value": true
+    },
+    {
+      "how": "default settings",
+      "name": "photos library default",
+      "value": true
+    },
+    {
+      "how": "steps the Super Clean scan runs",
+      "name": "super clean steps",
+      "value": "Junk & browsers, Duplicates, Photos, Apps, Startup"
+    },
+    {
+      "how": "choices of each browser's schedule",
+      "name": "scheduled cleaning options",
+      "value": "Never, Daily, Weekly, Monthly"
+    },
+    {
+      "how": "default schedule",
+      "name": "scheduled cleaning default",
+      "value": "Never"
+    },
+    {
+      "how": "how often the background job looks",
+      "name": "scheduled check interval",
+      "value": 3600
+    },
+    {
+      "how": "default settings",
+      "name": "only delete older history default",
+      "value": false
+    },
+    {
+      "how": "the options Settings offers",
+      "name": "history age options",
+      "value": "1 day, 1 week, 2 weeks, 1 month, 3 months"
+    },
+    {
+      "how": "cleaned a sample cookie database with keep.org on the allowlist; these cookies remained",
+      "name": "cookie allowlist keeps",
+      "value": ".keep.org, mail.keep.org"
+    },
+    {
+      "how": "cleaned a sample history with a visit an hour ago and one two days ago",
+      "name": "history older than 1 day",
+      "value": "recent visits kept, older removed"
+    }
+  ],
+  "version": 1
+}

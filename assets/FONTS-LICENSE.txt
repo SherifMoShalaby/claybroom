@@ -1,0 +1,6 @@
+Roboto Regular and Roboto Bold by Google, licensed under the Apache License 2.0
+(https://www.apache.org/licenses/LICENSE-2.0). Source: github.com/googlefonts/roboto-2
+Source Serif 4 Semibold by Adobe (Frank Grießhammer), licensed under the SIL Open Font License 1.1
+(https://openfontlicense.org). Source: github.com/adobe-fonts/source-serif
+
+Full licence texts: APACHE-2.0-Roboto.txt (Roboto) and OFL-SourceSerif4.txt (Source Serif 4).

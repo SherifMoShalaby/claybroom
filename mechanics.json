@@ -1,0 +1,354 @@
+{
+  "version": 1,
+  "values": [
+    {
+      "name": "large files minimum size options",
+      "group": "clutter",
+      "value": "250 MB, 500 MB, 1 GB, 2 GB, 5 GB, 10 GB",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "large files minimum size default",
+      "group": "clutter",
+      "value": 1000000000,
+      "unit": "bytes",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "user cache folder (macOS)",
+      "group": "clutter",
+      "value": "~/Library/Caches",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "user cache excludes (macOS)",
+      "group": "clutter",
+      "value": "com.apple.Safari/Extensions, fontconfig, Java",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "user log excludes (macOS)",
+      "group": "clutter",
+      "value": "",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "trash deletes empty folders",
+      "group": "clutter",
+      "value": true,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "external drive meta files",
+      "group": "clutter",
+      "value": ".DS_Store, .VolumeIcon.icns, ._*, .fseventsd, .Spotlight-V100, .TemporaryItems",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "protected folder",
+      "group": "safety",
+      "value": "/System/",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "Windows and Linux cleaning folders",
+      "group": "clutter",
+      "value": "mirrors of the macOS rules",
+      "estimated": true
+    },
+    {
+      "name": "duplicates minimum size options",
+      "group": "duplicates",
+      "value": "16 KB, 500 KB, 1 MB, 10 MB, 50 MB",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "duplicates minimum size default",
+      "group": "duplicates",
+      "value": 500000,
+      "unit": "bytes",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "duplicates match rule",
+      "group": "duplicates",
+      "value": "100% identical content",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "duplicates preselect default",
+      "group": "duplicates",
+      "value": "keep newest",
+      "estimated": true
+    },
+    {
+      "name": "move duplicates to trash default",
+      "group": "duplicates",
+      "value": true,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "ignore hidden files default",
+      "group": "duplicates",
+      "value": true,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "large apps options",
+      "group": "uninstaller",
+      "value": "500 MB, 1 GB, 2 GB, 5 GB, 10 GB, 15 GB",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "large apps default",
+      "group": "uninstaller",
+      "value": 1000000000,
+      "unit": "bytes",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "unused apps options",
+      "group": "uninstaller",
+      "value": "1, 3, 6 months, 1 year",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "unused apps default",
+      "group": "uninstaller",
+      "value": 6,
+      "unit": "months",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "browsers",
+      "group": "browser",
+      "value": "Safari, Chrome, Firefox, Opera, Edge, Brave, Vivaldi",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "browser categories",
+      "group": "browser",
+      "value": "Cookies, Caches, Browsing history, Saved form data, Autofill passwords",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "browser recommended selection",
+      "group": "browser",
+      "value": "caches and history",
+      "estimated": true
+    },
+    {
+      "name": "startup item types",
+      "group": "startup",
+      "value": "Application, Launch agent, Launch daemon",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "scan external drives default",
+      "group": "clutter",
+      "value": true,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "scan downloads default",
+      "group": "clutter",
+      "value": true,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "scan system cache and logs default",
+      "group": "clutter",
+      "value": true,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "statistics: size of one picture",
+      "group": "statistics",
+      "value": 3.0,
+      "unit": "MB",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "statistics: one minute of video",
+      "group": "statistics",
+      "value": 16.0,
+      "unit": "MB",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "statistics: one song",
+      "group": "statistics",
+      "value": 4.0,
+      "unit": "MB",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "window size",
+      "group": "layout",
+      "value": "1006 x 660",
+      "unit": "points",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "move deleted photos to trash default",
+      "group": "photos",
+      "value": true,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "photo bad-photo rules",
+      "group": "photos",
+      "value": "fine, Blurry, Too dark, Too bright",
+      "source": "Claybroom's own thresholds (blur 60, dark 35, bright 225, contrast 18), checked on sample images",
+      "estimated": true
+    },
+    {
+      "name": "similar photos: max hash difference",
+      "group": "photos",
+      "value": 5,
+      "unit": "bits of 64",
+      "estimated": true
+    },
+    {
+      "name": "similar photos: max time apart",
+      "group": "photos",
+      "value": 600,
+      "unit": "seconds",
+      "estimated": true
+    },
+    {
+      "name": "auto-empty trash default",
+      "group": "trash",
+      "value": false,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "auto-empty trash after",
+      "group": "trash",
+      "value": 7,
+      "unit": "days",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "clutter alert default",
+      "group": "alerts",
+      "value": 2000000000,
+      "unit": "bytes",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "disk space alert default",
+      "group": "alerts",
+      "value": 10000000000,
+      "unit": "bytes",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "settings tabs",
+      "group": "layout",
+      "value": "General, Scanning, Browser Cleaning, Trash, Alerts, About, Privacy",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "sidebar tabs",
+      "group": "layout",
+      "value": "Overview, Quick clean, Super clean, Clean clutter, Clean browser, Find duplicates, Analyze photos, Uninstall apps, Manage startups, System monitor, Statistics, Settings",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "scheduled cleaning options",
+      "group": "browser",
+      "value": "Never, Daily, Weekly, Monthly",
+      "source": "Claybroom default",
+      "estimated": true
+    },
+    {
+      "name": "scheduled cleaning default",
+      "group": "browser",
+      "value": "Never",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "scheduled check interval",
+      "group": "browser",
+      "value": 3600,
+      "unit": "seconds",
+      "estimated": true
+    },
+    {
+      "name": "only delete older history default",
+      "group": "browser",
+      "value": false,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "history age options",
+      "group": "browser",
+      "value": "1 day, 1 week, 2 weeks, 1 month, 3 months",
+      "source": "Claybroom default",
+      "estimated": true
+    },
+    {
+      "name": "cookie allowlist keeps",
+      "group": "browser",
+      "value": ".keep.org, mail.keep.org",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "history older than 1 day",
+      "group": "browser",
+      "value": "recent visits kept, older removed",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "appearance themes",
+      "group": "layout",
+      "value": "Match system, Light, Dark",
+      "source": "Claybroom default",
+      "estimated": true
+    },
+    {
+      "name": "appearance default",
+      "group": "layout",
+      "value": "Match system",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "large files on the whole computer default",
+      "group": "clutter",
+      "value": false,
+      "source": "Claybroom default",
+      "estimated": true
+    },
+    {
+      "name": "photo file types",
+      "group": "photos",
+      "value": "jpg, jpeg, png; heic, heif through a converter",
+      "source": "HEIC is read through macOS's sips, or elsewhere ImageMagick, libheif's heif-convert, ffmpeg or Windows' HEIF Image Extensions, whichever the computer has"
+    },
+    {
+      "name": "update check default",
+      "group": "layout",
+      "value": false,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "super clean steps",
+      "group": "layout",
+      "value": "Junk & browsers, Duplicates, Photos, Apps, Startup",
+      "source": "Claybroom default"
+    },
+    {
+      "name": "folder right-click item default",
+      "group": "duplicates",
+      "value": true,
+      "source": "Claybroom default"
+    },
+    {
+      "name": "photos library default",
+      "group": "photos",
+      "value": true,
+      "source": "Claybroom default"
+    }
+  ]
+}

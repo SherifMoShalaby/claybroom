@@ -1,0 +1,39 @@
+[package]
+name = "claybroom"
+version = "0.1.0"
+edition = "2024"
+description = "Free, open-source disk cleaner for macOS, Windows and Linux"
+license = "MIT"
+repository = "https://github.com/SherifMoShalaby/claybroom"
+
+[dependencies]
+blake3 = { version = "1.8.7", features = ["pure"] }
+chrono = { version = "0.4.45", default-features = false, features = ["clock"] }
+dirs = "7.0.0"
+eframe = { version = "0.37.0", features = ["persistence"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+rfd = "0.18.0"
+rusqlite = { version = "0.43.0", features = ["bundled"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1"
+starship-battery = "0.12.0"
+sysinfo = "0.40.4"
+trash = "5.4.0"
+tray-icon = "0.27.0"
+walkdir = "2.5.1"
+
+[target."cfg(windows)".dependencies]
+winreg = "0.56.0"
+
+[target."cfg(target_os = \"macos\")".dependencies]
+winit = "0.30"
+plist = "1.10.4"
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSProcessInfo", "NSString"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+gtk = "0.19"
+
+# Libraries (image decoding, hashing) run optimised even in test builds.
+[profile.dev.package."*"]
+opt-level = 2
