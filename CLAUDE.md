@@ -17,7 +17,7 @@ cargo test -- --ignored --nocapture          # read-only scans of the real compu
 ./target/release/claybroom --page clutter    # open a screen directly (quick|clutter|browser|duplicates|photos|apps|startup|monitor|stats|settings|tray)
 ./target/release/claybroom --page clutter --scan --screenshot out.png   # screenshot after the scan (--during: while scanning)
 ./target/release/claybroom --mechanics out.json   # measure what the build does, no window
-sh packaging/macos-dmg.sh                    # universal .app + dist/Claybroom-<version>.dmg
+sh packaging/macos-dmg.sh                    # universal .app + dist/Claybroom-v<version>.dmg
 ```
 
 Other CLI modes in `src/main.rs`: `--scheduled-clean` (what the hourly background job runs) and

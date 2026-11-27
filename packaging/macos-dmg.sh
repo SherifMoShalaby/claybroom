@@ -1,18 +1,20 @@
 #!/bin/sh
-# Build Claybroom.app (Apple silicon + Intel) and pack it into dist/Claybroom-<version>.dmg.
+# Build Claybroom.app (Apple silicon + Intel) and pack it into dist/Claybroom-v<version>.dmg.
 # Run from anywhere: sh packaging/macos-dmg.sh
 set -eu
 cd "$(dirname "$0")/.."
 VERSION=$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -1)
 APP=dist/Claybroom.app
 STAGE=dist/dmg-stage
+# Same naming as the Windows and Linux downloads: Claybroom-v<version>-…
+DMG="dist/Claybroom-v$VERSION.dmg"
 
 # One binary that runs on both kinds of Mac.
 rustup target add aarch64-apple-darwin x86_64-apple-darwin >/dev/null
 cargo build --release --target aarch64-apple-darwin
 cargo build --release --target x86_64-apple-darwin
 
-rm -rf "$APP" "$STAGE" "dist/Claybroom-$VERSION.dmg"
+rm -rf "$APP" "$STAGE" "$DMG"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources" "$STAGE"
 lipo -create -output "$APP/Contents/MacOS/claybroom" \
   target/aarch64-apple-darwin/release/claybroom target/x86_64-apple-darwin/release/claybroom
@@ -53,6 +55,6 @@ codesign --force --deep --sign - "$APP"
 
 cp -R "$APP" "$STAGE/"
 ln -s /Applications "$STAGE/Applications"
-hdiutil create -volname "Claybroom" -srcfolder "$STAGE" -ov -format UDZO "dist/Claybroom-$VERSION.dmg" >/dev/null
+hdiutil create -volname "Claybroom" -srcfolder "$STAGE" -ov -format UDZO "$DMG" >/dev/null
 rm -rf "$STAGE"
-echo "dist/Claybroom-$VERSION.dmg"
+echo "$DMG"

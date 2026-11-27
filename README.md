@@ -24,11 +24,11 @@ Nothing is removed without a confirmation. Personal files go to the Trash; regen
 
 ## Download
 
-* **macOS** (Apple silicon and Intel): `Claybroom-<version>.dmg`. Open it, drag Claybroom to
+* **macOS** (Apple silicon and Intel): `Claybroom-v<version>.dmg`. Open it, drag Claybroom to
   Applications. The first time, right-click Claybroom › Open (it isn't notarised by Apple yet).
-* **Windows**: `Claybroom-<version>-windows-x64.exe`. Windows SmartScreen may ask once: More info ›
+* **Windows**: `Claybroom-v<version>-windows-x64.exe`. Windows SmartScreen may ask once: More info ›
   Run anyway (it isn't code-signed yet).
-* **Linux**: `Claybroom-<version>-linux-x64.tar.gz`, then run `claybroom` inside it. The tray icon
+* **Linux**: `Claybroom-v<version>-linux-x64.tar.gz`, then run `claybroom` inside it. The tray icon
   needs GTK 3 and libayatana-appindicator3 (installed on most desktops).
 
 Releases are built by `.github/workflows/release.yml` when a tag like `v0.1.0` is pushed.
