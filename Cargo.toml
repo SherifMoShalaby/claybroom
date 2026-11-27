@@ -1,6 +1,6 @@
 [package]
 name = "claybroom"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Free, open-source disk cleaner for macOS, Windows and Linux"
 license = "MIT"
